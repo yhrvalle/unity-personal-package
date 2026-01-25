@@ -37,6 +37,12 @@ namespace PersonalPackage.Editor
             Assets.ImportAssets("Better Hierarchy.unitypackage", "Toaster Head/Editor ExtensionsUtilities");
         }
 
+        [MenuItem("Tools/Setup/Import DarkMode Unity Asset")]
+        public static void ImportDarkModeUnityAsset()
+        {
+            Assets.ImportAssets("DarkMode for Unity Editor on Windows.unitypackage", "0x7c13/ScriptingGUI");
+        }
+
         [MenuItem("Tools/Setup/Import OpenSource SceneRef Attributes")]
         public static void ImportOpenSourceSceneRefAttributes()
         {
