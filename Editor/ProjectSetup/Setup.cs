@@ -23,7 +23,7 @@ namespace PersonalPackage.Editor
             Folders.Move("_Project/", "Settings");
             Folders.Delete("TutorialInfos");
             Refresh();
-            MoveAsset("Package/Yhr's Personal Package/Runtime/Input/PlayerInputActions.inputactions",
+            MoveAsset("Packages/Yhr's Personal Package/Runtime/Input/PlayerInputActions.inputactions",
                 "Assets/_Project/Settings/PlayerInputActions.inputactions");
             DeleteAsset("Assets/Readme.asset");
             Refresh();
