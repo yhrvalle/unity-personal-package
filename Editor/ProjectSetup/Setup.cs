@@ -7,6 +7,7 @@ using UnityEngine;
 using static System.IO.Directory;
 using static System.IO.Path;
 using static UnityEditor.AssetDatabase;
+using Application = UnityEngine.Application;
 
 namespace PersonalPackage.Editor
 {
@@ -16,6 +17,14 @@ namespace PersonalPackage.Editor
         public static void CreateDefaultFoldersStructure()
         {
             Folders.CreateDefault("_Project", "Animation", "Art", "Materials", "Prefabs", "ScriptableObjects", "Scripts", "Settings");
+            Refresh();
+            Folders.Move("_Project/", "Scenes");
+            Folders.Move("_Project/", "Settings");
+            Folders.Delete("TutorialInfos");
+            Refresh();
+            MoveAsset("Package/Yhr's Personal Package/Runtime/Input/PlayerInputActions.inputactions",
+                "Assets/_Project/Settings/PlayerInputActions.inputactions");
+            DeleteAsset("Assets/Readme.asset");
             Refresh();
         }
 
@@ -60,6 +69,23 @@ namespace PersonalPackage.Editor
                     string path = Combine(fullPath, folder);
                     if (!Exists(path)) CreateDirectory(path);
                 }
+            }
+
+            public static void Move(string newParent, string folderName)
+            {
+                string sourcePath = $"Assets/{folderName}";
+                if (IsValidFolder(sourcePath))
+                {
+                    string destinationPath = $"Assets/{newParent}/{folderName}";
+                    string error = MoveAsset(sourcePath, destinationPath);
+                    if (!string.IsNullOrEmpty(error)) Debug.LogError($"Failed to move folder '{folderName}': {error}");
+                }
+            }
+
+            public static void Delete(string folderName)
+            {
+                string pathToDelete = $"Assets/{folderName}";
+                if (IsValidFolder(pathToDelete)) DeleteAsset(pathToDelete);
             }
         }
 
