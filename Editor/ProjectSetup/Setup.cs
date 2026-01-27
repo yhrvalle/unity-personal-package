@@ -41,6 +41,7 @@ namespace PersonalPackage.Editor
         public static void ImportDarkModeUnityAsset()
         {
             Assets.ImportAssets("DarkMode for Unity Editor on Windows.unitypackage", "0x7c13/ScriptingGUI");
+            Refresh();
         }
 
         [MenuItem("Tools/Setup/Import OpenSource SceneRef Attributes")]

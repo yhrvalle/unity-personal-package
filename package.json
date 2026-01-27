@@ -2,7 +2,7 @@
   "name": "com.yhr.personalpackage",
   "version": "1.0.0",
   "displayName": "Yhr's Personal Package",
-  "description": "This is my personal package for the some modular code I built a long the way",
+  "description": "This is my personal package for some systems and setup code I built along the way",
   "unity": "6000.3",
   "author": {
     "name": "Yhr",
