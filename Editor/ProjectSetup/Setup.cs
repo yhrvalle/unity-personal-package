@@ -21,11 +21,12 @@ namespace PersonalPackage.Editor
             Refresh();
             Folders.Move("_Project/", "Scenes");
             Folders.Move("_Project/", "Settings");
-            Folders.Delete("TutorialInfos");
+            Folders.Delete("TutorialInfo");
             Refresh();
-            MoveAsset("Packages/Yhr's Personal Package/Runtime/Input/PlayerInputActions.inputactions",
+            CopyAsset("Packages/Yhr's Personal Package/Runtime/Input/PlayerInputActions.inputactions",
                 "Assets/_Project/Settings/PlayerInputActions.inputactions");
             DeleteAsset("Assets/Readme.asset");
+            DeleteAsset("Assets/InputSystem_Actions.inputactions");
             Refresh();
         }
 
