@@ -17,7 +17,7 @@ namespace PersonalPackage.Editor
         [MenuItem("Tools/Setup/Create Default Folders")]
         public static void CreateDefaultFoldersStructure()
         {
-            Folders.CreateDefault("_Project", "Animation", "Art", "Materials", "Prefabs", "ScriptableObjects", "Scripts", "Settings");
+            Folders.CreateDefault("_Project", "Animation", "Art", "Materials", "Prefabs", "ScriptableObjects", "Scripts");
             Refresh();
             Folders.Move("_Project/", "Scenes");
             Folders.Move("_Project/", "Settings");
