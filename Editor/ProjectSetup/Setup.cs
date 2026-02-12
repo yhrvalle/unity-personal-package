@@ -23,8 +23,10 @@ namespace PersonalPackage.Editor
             Folders.Move("_Project/", "Settings");
             Folders.Delete("TutorialInfo");
             Refresh();
+            CopyAsset("Packages/Yhr's Personal Package/Runtime/Input/PlayerInputActions.inputactions",
+                "Assets/_Project/Settings/PlayerInputActions.inputactions");
             DeleteAsset("Assets/Readme.asset");
-            DeleteAsset("Assets/InputSystem_Actions.inputactions"); // Just copy the personal one from the Packages folder to the Settings
+            DeleteAsset("Assets/InputSystem_Actions.inputactions");
             Refresh();
         }
 
